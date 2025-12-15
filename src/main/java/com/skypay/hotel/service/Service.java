@@ -53,8 +53,6 @@ public class Service {
         }
 
         int userBalanceSnapshot = user.getBalance();
-        user.setBalance(userBalanceSnapshot - totalPrice);
-
         Booking booking =
                 new Booking(
                         // capture room and user snapshot so future updates do not affect this booking
@@ -68,6 +66,7 @@ public class Service {
                         totalPrice,
                         LocalDateTime.now());
         bookings.add(booking);
+        user.setBalance(userBalanceSnapshot - totalPrice);
     }
 
     public void printAll() {

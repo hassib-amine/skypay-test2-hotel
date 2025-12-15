@@ -8,6 +8,7 @@ import com.skypay.hotel.model.RoomType;
 import com.skypay.hotel.service.Service;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.util.Date;
 
 public class Main {
@@ -59,7 +60,7 @@ public class Main {
     }
 
     private static Date toDate(LocalDate localDate) {
-        return Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        return Date.from(localDate.atStartOfDay(ZoneOffset.UTC).toInstant());
     }
 
     private static void attemptBooking(

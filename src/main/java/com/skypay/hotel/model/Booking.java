@@ -2,6 +2,7 @@ package com.skypay.hotel.model;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 /****
  Booking stores a snapshot of room and user data at booking time
