@@ -57,6 +57,7 @@ public class Service {
 
         Booking booking =
                 new Booking(
+                        // capture room and user snapshot so future updates do not affect this booking
                         room.getRoomNumber(),
                         room.getRoomType(),
                         room.getPricePerNight(),
@@ -159,6 +160,7 @@ public class Service {
 
     private boolean datesOverlap(
             LocalDate newCheckIn, LocalDate newCheckOut, LocalDate existingCheckIn, LocalDate existingCheckOut) {
+        // Intervals are treated as [checkIn, checkOut); overlap exists if they intersect.
         return newCheckIn.isBefore(existingCheckOut) && newCheckOut.isAfter(existingCheckIn);
     }
 

@@ -3,6 +3,10 @@ package com.skypay.hotel.model;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+/****
+ Booking stores a snapshot of room and user data at booking time
+ so future updates to Room or User do not affect historical bookings.
+ ****/
 public class Booking {
     private final int roomNumberSnapshot;
     private final RoomType roomTypeSnapshot;

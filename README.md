@@ -12,3 +12,6 @@
 - Q2: Another way than `setRoom` not impacting bookings?  
   - Current approach snapshots room/user data inside each `Booking`. Alternatives include: versioned room pricing/history and storing the version reference in each booking; immutable room records per change with new identifiers; or event-sourcing bookings based on immutable events. Recommendation here: keep immutable booking snapshots (what we implemented) because it is simple, explicit, and guarantees past bookings remain accurate even as rooms change.
 
+Assumption: For simplicity, this in-memory implementation assumes sequential execution and does not handle concurrent bookings or transactional rollback, which would be required in a production system.
+- For simplicity, this in-memory implementation assumes sequential execution and does not handle concurrent bookings or transactional rollback, which would be required in a production system.
+
